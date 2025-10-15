@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+.bg-light {
+    background-color: #fef3e2; 
+    color: #1e293b; 
+}
+
+.bg-light .navbar {
+    background: linear-gradient(to right, #f97316, #dc2626); 
+    color: white; 
+    padding: 12px 20px;
+    border-bottom: 1px solid #fed7aa; 
+}
+
+.bg-light .secondary-text {
+    color: #78716c; 
+}
+
+.bg-light .accent {
+    color: #ea580c; 
+}
+
+.bg-light .border {
+    border-color: #fed7aa;
+}
+
+
+.bg-dark {
+    background-color: #1a2634; 
+    color: #e3e8f0; 
+}
+
+.bg-dark .navbar {
+    background: linear-gradient(to right, #c2410c, #991b1b); 
+    color: #e3e8f0; 
+    padding: 12px 20px;
+    border-bottom: 1px solid #334155; 
+}
+
+.bg-dark .secondary-text {
+    color: #94a3b8; 
+}
+
+.bg-dark .accent {
+    color: #fb923c;
+}
+
+.bg-dark .border {
+    border-color: #334155; 
+}
+
+.bg-dark .card {
+    background-color: #293548; 
+    border-color: #3a4b5e;
+    color: #e3e8f0;
+    transition: all 0.3s ease;
+}
+  
+.bg-light .card {
+    background-color: #ffffff; 
+    border-color: #fed7aa;      
+    color: #1e293b;           
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 15px rgba(234, 88, 12, 0.2);
+}
+
+.bg-light .input{
+    background-color: white;
+}
+
+.gradient-background{
+    background: linear-gradient(to right, #f97316, #dc2626)
+}

@@ -1,0 +1,23 @@
+export default interface User {
+    _id?:string;
+    name:{
+        first:string;
+        middle?:string;
+        last:string;
+    },
+    phone:string;
+    email:string;
+    password:string;
+    image:{
+        url?:string;
+        alt?:string;
+    },
+    address:{
+        country:string;
+        city:string;
+        street:string
+    },
+    isCook:boolean;
+    isAdmin?:boolean;
+    createdAt?:string;
+}

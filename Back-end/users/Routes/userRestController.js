@@ -13,6 +13,7 @@ const returnUser = require("../helpers/returnUser");
 const {
   validateRegistration,
   validateLogin,
+  validateUpdate,
 } = require("../validation/userValidationService");
 const auth = require("../../auth/authService");
 const router = express.Router();
@@ -106,7 +107,7 @@ router.put("/:id", auth, async (req, res) => {
       );
     }
 
-    const errorMessage = validateRegistration(updatedUser);
+    const errorMessage = validateUpdate(updatedUser);
     if (errorMessage != "") {
       throw createError("Validation", errorMessage, 400);
     }
