@@ -5,7 +5,6 @@ interface ProfileNotFoundProps {
 }
 
 const ProfileNotFound: FunctionComponent<ProfileNotFoundProps> = ({
-  theme,
 }) => {
   return (
     <>

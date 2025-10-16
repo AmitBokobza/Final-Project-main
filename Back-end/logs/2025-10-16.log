@@ -26,3 +26,4 @@
 [2025-10-16 01:17:41] POST /users/login 400 -- 1.202 ms
 [2025-10-16 20:26:15] POST /users/login 400 -- 1.790 ms
 [2025-10-16 20:28:57] POST /users/login 400 -- 59.588 ms
+[2025-10-16 20:45:57] GET /users/6dsadsad 400 -- 2.449 ms
