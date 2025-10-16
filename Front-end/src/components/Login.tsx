@@ -42,30 +42,14 @@ const Login: FunctionComponent<LoginProps> = () => {
     },
   });
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4 py-12">
+    <div className={`min-h-[70vh] flex items-center justify-center px-4 py-12 ${theme === "dark" ? "bg-dark" : "bg-light"}`}>
       <div className="w-full max-w-md">
-        <div
-          className={`
-          relative 
-          ${theme === "dark" ? "bg-gray-800" : "bg-white"} 
-          shadow-lg 
-          rounded-lg 
-          overflow-hidden
-        `}
-        >
+        <div className="card relative shadow-lg rounded-lg overflow-hidden">
           {/* Gradient Highlight */}
           <div className="absolute top-0 left-0 w-full h-1 gradient-background" />
 
           <div className="p-8">
-            <h2
-              className={`
-              text-3xl 
-              font-bold 
-              text-center 
-              mb-8 
-              ${theme === "dark" ? "text-white" : "text-gray-800"}
-            `}
-            >
+            <h2 className="text-3xl font-bold text-center mb-8">
               Login
             </h2>
 
@@ -90,49 +74,17 @@ const Login: FunctionComponent<LoginProps> = () => {
                 <button
                   disabled={!formik.dirty || !formik.isValid}
                   type="submit"
-                  className={`
-                  w-full 
-                  py-3 
-                  px-4 
-                  text-white 
-                  ${
-                    theme === "dark"
-                      ? "bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-                      : "bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
-                  } 
-                  rounded-lg 
-                  transition-colors 
-                  duration-200 
-                  font-medium 
-                  focus:outline-none 
-                  focus:ring-2 
-                  focus:ring-offset-2 
-                  disabled:opacity-60 
-                  disabled:pointer-events-none
-                `}
+                  className="w-full py-3 px-4 text-white gradient-background rounded-lg transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-60 disabled:pointer-events-none hover:opacity-90"
                 >
                   Login
                 </button>
 
                 <div className="text-center mt-4">
-                  <p
-                    className={`
-                    text-sm 
-                    ${theme === "dark" ? "text-gray-400" : "text-gray-600"}
-                  `}
-                  >
+                  <p className="text-sm secondary-text">
                     Don't have an account?
                     <Link
                       to="/register"
-                      className={`
-                      ml-1 
-                      font-medium 
-                      ${
-                        theme === "dark"
-                          ? "text-blue-400 hover:text-blue-300"
-                          : "text-blue-600 hover:text-blue-700"
-                      }
-                    `}
+                      className="ml-1 font-medium accent hover:underline"
                     >
                       Sign up
                     </Link>

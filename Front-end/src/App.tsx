@@ -6,8 +6,8 @@ import UserLayout from "./components/layout/UserLayout";
 import NavBar from "./components/layout/NavBar";
 import Home from "./components/layout/Home";
 import { createContext, useState } from "react";
-import CreateCard from "./components/CreateCard";
-import MyCards from "./components/MyCards";
+import CreateCard from "./components/CreateRecipe";
+import MyCards from "./components/MyRecipes";
 import CardLanding from "./components/ReusableComp/RecipeComponents/RecipeLanding";
 import Footer from "./components/layout/Footer";
 import About from "./components/About";
@@ -17,7 +17,7 @@ import PageNotFound from "./components/ReusableComp/Misc/PageNotFound";
 import AdminLayout from "./components/layout/AdminLayout";
 import UserManager from "./components/UserManager";
 import FavRecipes from "./components/LikedRecipes";
-import EditRecipe from "./components/EditCard";
+import EditRecipe from "./components/EditRecipe";
 
 export interface Quarry {
   search: string;

@@ -58,44 +58,20 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = () => {
   if (loggedUser) {
     return (
       <>
-        <div
-          className={`flex items-center justify-center min-h-screen bg-${
-            theme === "dark" ? "gray-900" : "gray-100"
-          } py-12 px-4`}
-        >
-          <div
-            className={`w-full max-w-4xl bg-${
-              theme === "dark" ? "gray-800" : "white"
-            } shadow-xl p-6 md:p-10 rounded-xl card border border-gray-200 dark:border-gray-700`}
-          >
+        <div className={`flex items-center justify-center min-h-screen py-12 px-4 ${theme === "dark" ? "bg-dark" : "bg-light"}`}>
+          <div className="w-full max-w-4xl card shadow-xl p-6 md:p-10 rounded-xl border">
             <ProfileHeader loggedUser={loggedUser} />
 
-            <div
-              className={`mt-10 p-6 rounded-lg ${
-                theme === "dark" ? "bg-gray-700/50" : "bg-gray-50"
-              }`}
-            >
-              <h2
-                className={`text-xl font-semibold mb-4 text-${
-                  theme === "dark" ? "white" : "gray-900"
-                } pb-2 border-b border-gray-200 dark:border-gray-600`}
-              >
+            <div className={`mt-10 p-6 rounded-lg ${theme === "dark" ? "bg-gray-700/50" : "bg-gray-50"}`}>
+              <h2 className="text-xl font-semibold mb-4 pb-2 border-b border">
                 Contact Information
               </h2>
 
               <ProfileContact loggedUser={loggedUser} />
             </div>
 
-            <div
-              className={`mt-6 p-6 rounded-lg ${
-                theme === "dark" ? "bg-gray-700/50" : "bg-gray-50"
-              }`}
-            >
-              <h2
-                className={`text-xl font-semibold mb-4 text-${
-                  theme === "dark" ? "white" : "gray-900"
-                } pb-2 border-b border-gray-200 dark:border-gray-600`}
-              >
+            <div className={`mt-6 p-6 rounded-lg ${theme === "dark" ? "bg-gray-700/50" : "bg-gray-50"}`}>
+              <h2 className="text-xl font-semibold mb-4 pb-2 border-b border">
                 Address Information
               </h2>
 
@@ -106,18 +82,14 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = () => {
               <div className="mt-8 flex justify-center">
                 <button
                   onClick={() => navigate(`../edit-user/${loggedUser._id}`)}
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition duration-200 transform hover:translate-y-px focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                  className="px-6 py-3 gradient-background text-white font-medium rounded-lg shadow-md transition-all duration-200 transform hover:opacity-90 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
                 >
                   Edit Profile
                 </button>
               </div>
             )}
-            <p
-              className={`text-sm mt-10 text-${
-                theme === "dark" ? "gray-500" : "gray-600"
-              } text-center`}
-            >
-              © 2025 AmitBusiness
+            <p className="text-sm mt-10 secondary-text text-center">
+              © 2025 Recipe Showcase
             </p>
           </div>
         </div>
@@ -125,7 +97,7 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = () => {
     );
   } else {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className={`container mx-auto px-4 py-8 ${theme === "dark" ? "bg-dark" : "bg-light"}`}>
         <ProfileNotFound theme={theme} />
       </div>
     );

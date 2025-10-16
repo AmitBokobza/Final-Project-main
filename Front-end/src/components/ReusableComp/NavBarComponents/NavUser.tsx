@@ -49,7 +49,7 @@ const NavUser: FunctionComponent<NavUserProps> = () => {
     );
   }
 
-  if (!user.isBusiness) {
+  if (!user.isCook) {
     return (
       <>
         <div className="flex flex-row justify-center items-center">
@@ -67,7 +67,7 @@ const NavUser: FunctionComponent<NavUserProps> = () => {
     );
   }
 
-  if (user.isBusiness) {
+  if (user.isCook) {
     return (
       <>
         <div className="flex flex-row justify-center items-center">

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 .bg-light {
-    background-color: #fef3e2; 
+    background: linear-gradient(to bottom right, #fef3e2, #fde8cc);
     color: #1e293b; 
 }
 
 .bg-light .navbar {
-    background: linear-gradient(to right, #f97316, #dc2626); 
+    background: linear-gradient(to right, #ea580c, #dc2626); 
     color: white; 
     padding: 12px 20px;
     border-bottom: 1px solid #fed7aa; 
 }
 
 .bg-light .secondary-text {
-    color: #78716c; 
+    color: #475569; 
 }
 
 .bg-light .accent {
@@ -26,19 +26,19 @@
 
 
 .bg-dark {
-    background-color: #1a2634; 
-    color: #e3e8f0; 
+    background: linear-gradient(to bottom right, #1c1917, #171717);
+    color: #fef3e2; 
 }
 
 .bg-dark .navbar {
-    background: linear-gradient(to right, #c2410c, #991b1b); 
-    color: #e3e8f0; 
+    background: linear-gradient(to right, #ea580c, #dc2626); 
+    color: #fef3e2; 
     padding: 12px 20px;
     border-bottom: 1px solid #334155; 
 }
 
 .bg-dark .secondary-text {
-    color: #94a3b8; 
+    color: #d6d3d1; 
 }
 
 .bg-dark .accent {
@@ -50,10 +50,11 @@
 }
 
 .bg-dark .card {
-    background-color: #293548; 
-    border-color: #3a4b5e;
-    color: #e3e8f0;
+    background: linear-gradient(135deg, #292524 0%, #44403c 100%);
+    border-color: #334155;
+    color: #fef3e2;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
   
 .bg-light .card {
@@ -61,17 +62,29 @@
     border-color: #fed7aa;      
     color: #1e293b;           
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(249, 115, 22, 0.1);
 }
 
 .card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 15px rgba(234, 88, 12, 0.2);
+    transform: translateY(-2px) scale(1.005);
+    box-shadow: 0 12px 20px rgba(234, 88, 12, 0.2);
+}
+
+.bg-dark .card:hover {
+    box-shadow: 0 12px 20px rgba(194, 65, 12, 0.25);
 }
 
 .bg-light .input{
     background-color: white;
+    border: 1px solid #fed7aa;
+}
+
+.bg-dark .input{
+    background-color: #292524;
+    border: 1px solid #334155;
+    color: #fef3e2;
 }
 
 .gradient-background{
-    background: linear-gradient(to right, #f97316, #dc2626)
+    background: linear-gradient(to right, #ea580c, #dc2626);
 }

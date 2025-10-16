@@ -40,25 +40,20 @@ const UserTable: FunctionComponent<UserTableProps> = ({
 
         <table className="w-full table-auto border-collapse relative z-10">
           <thead>
-            <tr
-              className={`
-              ${
+            <tr className={`${
                 theme === "dark"
-                  ? "bg-gray-800 text-gray-200 border-gray-700"
-                  : "bg-gray-100 text-gray-800 border-gray-300"
-              } text-left relative`}
-            >
-              <th className="p-0 border-0">
-                <div className="absolute top-0 left-0 w-full h-1 gradient-background" />
-              </th>
-              <th className="p-3 border-b font-semibold hidden md:table-cell">
+                  ? "bg-gray-800 text-gray-200"
+                  : "bg-gray-100 text-gray-800"
+              } text-left relative`}>
+              <th className="p-0 border-0"></th>
+              <th className="p-4 font-semibold hidden md:table-cell border-b-2 border-orange-500">
                 ID
               </th>
-              <th className="p-3 border-b font-semibold">NAME</th>
-              <th className="p-3 border-b font-semibold hidden sm:table-cell">
-                BUSINESS STATUS
+              <th className="p-4 font-semibold border-b-2 border-orange-500">NAME</th>
+              <th className="p-4 font-semibold hidden sm:table-cell border-b-2 border-orange-500">
+                COOK STATUS
               </th>
-              <th className="p-3 border-b font-semibold">CONTROLS</th>
+              <th className="p-4 font-semibold border-b-2 border-orange-500">CONTROLS</th>
             </tr>
           </thead>
           {users && (
@@ -66,8 +61,7 @@ const UserTable: FunctionComponent<UserTableProps> = ({
               {users.map((user) => (
                 <tr
                   key={user._id}
-                  className={`
-                  ${
+                  className={`${
                     theme === "dark"
                       ? "border-gray-700 bg-gray-700/50 hover:bg-gray-700/70"
                       : "border-gray-200 bg-white hover:bg-gray-100"
@@ -79,39 +73,36 @@ const UserTable: FunctionComponent<UserTableProps> = ({
                       style={{
                         background: user.isAdmin
                           ? "linear-gradient(to bottom, #ef4444, #dc2626)"
-                          : user.isBusiness
-                          ? "linear-gradient(to bottom, #8e56c9, #7e22ce)"
-                          : "linear-gradient(to bottom, #4f8ad5, #3b82f6)",
+                          : user.isCook
+                          ? "linear-gradient(to bottom, #f97316, #ea580c)"
+                          : "linear-gradient(to bottom, #fb923c, #f97316)",
                       }}
                     />
                   </td>
-                  <td className="p-3 text-sm truncate max-w-[150px] hidden md:table-cell">
+                  <td className="p-3 text-sm truncate max-w-[150px] hidden md:table-cell border">
                     {user._id}
                   </td>
-                  <td className="p-3">
+                  <td className="p-3 border">
                     {user.name.first} {user.name.middle} {user.name.last}
                   </td>
-                  <td className="p-3 hidden sm:table-cell">
+                  <td className="p-3 hidden sm:table-cell border">
                     <span
-                      className={`
-                      px-3 py-1 rounded-full text-xs font-medium inline-block
-                      ${
+                      className={`px-3 py-1 rounded-full text-xs font-medium inline-block ${
                         user.isAdmin
                           ? "bg-gradient-to-r from-red-500 to-red-600 text-white"
-                          : user.isBusiness
-                          ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white"
-                          : "bg-gradient-to-r from-blue-500 to-blue-600 text-white"
-                      }
-                    `}
+                          : user.isCook
+                          ? "gradient-background text-white"
+                          : "bg-gradient-to-r from-orange-400 to-orange-500 text-white"
+                      }`}
                     >
                       {user.isAdmin
                         ? "Admin User"
-                        : user.isBusiness
-                        ? "Business User"
+                        : user.isCook
+                        ? "Cook User"
                         : "Personal User"}
                     </span>
                   </td>
-                  <td className="p-3">
+                  <td className="p-3 border">
                     <div className="flex items-center space-x-3">
                       <button
                         onClick={() => {
@@ -126,27 +117,17 @@ const UserTable: FunctionComponent<UserTableProps> = ({
                               toastEmitter.error("Error Deleting User!");
                             });
                         }}
-                        className={`
-                        hover:text-red-500 transition-colors duration-200
-                        ${
+                        className={`hover:text-red-500 transition-colors duration-200 ${
                           theme === "dark"
                             ? "text-red-400/70 hover:text-red-400"
                             : "text-red-500/80 hover:text-red-600"
-                        }
-                      `}
+                        }`}
                       >
                         <CiTrash size={20} />
                       </button>
                       <Link
                         to={`/profile-page/${user._id}`}
-                        className={`
-                        hover:text-blue-600 transition-colors duration-200
-                        ${
-                          theme === "dark"
-                            ? "text-blue-400/70 hover:text-blue-400"
-                            : "text-yellow-600/80 hover:text-yellow-700"
-                        }
-                      `}
+                        className="accent hover:opacity-80 transition-opacity duration-200"
                       >
                         <CiEdit size={20} />
                       </Link>

@@ -47,7 +47,9 @@ const loginUser = async (email, password) => {
     }
 
     const result = comparePassword(password, userFromDb.password)
-    console.log(result);
+    if (!result){
+      throw createError("Authentication", "Invalid email or password!", 403)
+    }
     
     const token = generateToken(userFromDb);
     return token;

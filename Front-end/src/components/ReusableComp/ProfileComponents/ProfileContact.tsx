@@ -70,8 +70,8 @@ const ProfileContact: FunctionComponent<ProfileContactProps> = ({
             <div>
               {loggedUser?.isAdmin
                 ? "Admin"
-                : loggedUser.isBusiness
-                ? "Business"
+                : loggedUser.isCook
+                ? "Cook"
                 : "Personal"}
             </div>
           </div>

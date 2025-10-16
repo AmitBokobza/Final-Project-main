@@ -57,7 +57,7 @@ const UserManager: FunctionComponent<UserManagerProps> = () => {
     return (
       <>
         <UserManagerHeader theme={theme} />
-        <div className="w-full py-10">
+        <div className={`w-full py-10 ${theme === "dark" ? "bg-dark" : "bg-light"}`}>
           <div className="mx-auto max-w-4xl px-4">
             <UserTable
               theme={theme}
@@ -66,26 +66,26 @@ const UserManager: FunctionComponent<UserManagerProps> = () => {
               token={token}
             />
 
-            <div className="flex justify-center my-4">
+            <div className="flex justify-center items-center my-6 gap-4">
               <button
-                className={`px-4 py-2 mx-2 border rounded ${
+                className={`px-6 py-2 border rounded-lg transition-all duration-200 font-medium ${
                   currentPage === 1
-                    ? "opacity-50 cursor-not-allowed"
-                    : `hover:bg-${theme} card`
+                    ? "opacity-50 cursor-not-allowed border"
+                    : "card border hover:opacity-90"
                 }`}
                 onClick={() => setCurrentPage(currentPage - 1)}
                 disabled={currentPage === 1}
               >
                 Previous
               </button>
-              <span className="px-4 py-2">
+              <span className="px-4 py-2 font-semibold secondary-text">
                 {currentPage} / {totalPages}
               </span>
               <button
-                className={`px-4 py-2 mx-2 border rounded ${
+                className={`px-6 py-2 border rounded-lg transition-all duration-200 font-medium ${
                   currentPage === totalPages
-                    ? "opacity-50 cursor-not-allowed"
-                    : `hover:bg-${theme} card`
+                    ? "opacity-50 cursor-not-allowed border"
+                    : "card border hover:opacity-90"
                 }`}
                 onClick={() => setCurrentPage(currentPage + 1)}
                 disabled={currentPage === totalPages}

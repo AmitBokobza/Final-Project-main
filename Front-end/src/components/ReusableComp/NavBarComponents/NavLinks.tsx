@@ -31,7 +31,7 @@ const NavLinks: FunctionComponent<NavLinksProps> = ({ isSideBar }) => {
               } p-1 rounded-full hover:bg-gray-200/30 transition-colors`}
               to="/liked-recipes"
             >
-              Liked Recipes
+              LIKED RECIPES
             </Link>
             <Link
               to="/my-recipes"
@@ -39,7 +39,7 @@ const NavLinks: FunctionComponent<NavLinksProps> = ({ isSideBar }) => {
                 isSideBar && "my-5 text-2xl"
               } p-1 rounded-full hover:bg-gray-200/30 transition-colors`}
             >
-              My Recipes
+              MY RECIPES
             </Link>
             <Link
               className={`ml-5 ${
